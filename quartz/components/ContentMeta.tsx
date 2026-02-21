@@ -7,9 +7,6 @@ import { JSX } from "preact"
 import style from "./styles/contentMeta.scss"
 
 interface ContentMetaOptions {
-  /**
-   * Whether to display reading time
-   */
   showReadingTime: boolean
   showComma: boolean
 }
@@ -20,7 +17,6 @@ const defaultOptions: ContentMetaOptions = {
 }
 
 export default ((opts?: Partial<ContentMetaOptions>) => {
-  // Merge options with defaults
   const options: ContentMetaOptions = { ...defaultOptions, ...opts }
 
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
@@ -30,12 +26,26 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       const segments: (string | JSX.Element)[] = []
 
       if (fileData.dates) {
-        segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)
+        // Usamos texto directo para evitar errores de TypeScript en i18n
+        if (fileData.dates.created) {
+          segments.push(
+            <span>
+              Creado: <Date date={fileData.dates.created} locale={cfg.locale} />
+            </span>
+          )
+        }
+
+        if (fileData.dates.modified) {
+          segments.push(
+            <span>
+              Modificado: <Date date={fileData.dates.modified} locale={cfg.locale} />
+            </span>
+          )
+        }
       }
 
-      // Display reading time if enabled
       if (options.showReadingTime) {
-        const { minutes, words: _words } = readingTime(text)
+        const { minutes } = readingTime(text)
         const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
           minutes: Math.ceil(minutes),
         })
