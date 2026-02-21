@@ -1,37 +1,39 @@
-name: Upload Preview Deployment
-on:
-  workflow_run:
-    workflows: ["Build Preview Deployment"]
-    types:
-      - completed
+name: Deploy Quartz to GitHub Pages
 
-permissions:
-  actions: read
-  deployments: write
-  contents: read
-  pull-requests: write
+on:
+  push:
+    branches:
+      - main  # Se publicará cada vez que hagas push a main
+  pull_request:
+    branches:
+      - main  # También puedes previsualizar PRs si quieres
 
 jobs:
-  deploy-preview:
-    if: ${{ github.repository == 'jackyzha0/quartz' && github.event.workflow_run.conclusion == 'success' }}
+  build-and-deploy:
     runs-on: ubuntu-latest
-    name: Deploy Preview to Cloudflare Pages
     steps:
-      - name: Download build artifact
-        uses: actions/download-artifact@v7
-        id: preview-build-artifact
-        with:
-          name: preview-build
-          path: build
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          run-id: ${{ github.event.workflow_run.id }}
+      # 1️⃣ Descargar el repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Deploy to Cloudflare Pages
-        uses: AdrianGonz97/refined-cf-pages-action@v1
+      # 2️⃣ Configurar Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: quartz
-          deploymentName: Branch Preview
-          directory: ${{ steps.preview-build-artifact.outputs.download-path }}
+          node-version: '20'
+
+      # 3️⃣ Instalar dependencias
+      - name: Install dependencies
+        run: npm ci
+
+      # 4️⃣ Construir Quartz
+      - name: Build Quartz
+        run: npx quartz build
+
+      # 5️⃣ Publicar en GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out  # Asegúrate que aquí esté la carpeta con tu build
+          publish_branch: gh-pages  # Rama donde se publicará
