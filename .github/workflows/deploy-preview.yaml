@@ -3,37 +3,28 @@ name: Deploy Quartz to GitHub Pages
 on:
   push:
     branches:
-      - main  # Publica cada vez que hagas push a main
-  pull_request:
-    branches:
-      - main  # Genera preview si quieres (opcional)
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1️⃣ Descargar el repositorio
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      # 2️⃣ Configurar Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      # 3️⃣ Instalar dependencias
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Construir Quartz
       - name: Build Quartz
         run: npx quartz build
 
-      # 5️⃣ Publicar en GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v5
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out        # Carpeta generada por Quartz
-          publish_branch: gh-pages  # Rama que GitHub Pages usará
+          publish_dir: ./out
+          publish_branch: gh-pages
