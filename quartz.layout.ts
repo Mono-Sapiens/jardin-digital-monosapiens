@@ -5,7 +5,23 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.Comments({
+      provider: "giscus",
+      options: {
+        repo: "Mono-Sapiens/jardin-digital-monosapiens",
+        repoId: "R_kgDORVf04Q",
+        category: "General",
+        categoryId: "DIC_kwDORVf04c4C27PV",
+        mapping: "pathname",
+        strict: true,
+        reactionsEnabled: true,
+        inputPosition: "bottom",
+        lightTheme: "light",
+        darkTheme: "dark",
+      }
+    })
+  ],
   footer: Component.Footer({
     links: {
       "Youtube de Monosapiens": "https://www.youtube.com/@ElChaleroDelDave",
@@ -65,3 +81,5 @@ export const defaultListPageLayout: PageLayout = {
   ],
   right: [],
 }
+
+
