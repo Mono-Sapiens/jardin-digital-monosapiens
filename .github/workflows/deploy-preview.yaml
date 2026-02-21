@@ -3,10 +3,10 @@ name: Deploy Quartz to GitHub Pages
 on:
   push:
     branches:
-      - main  # Se publicará cada vez que hagas push a main
+      - main  # Publica cada vez que hagas push a main
   pull_request:
     branches:
-      - main  # También puedes previsualizar PRs si quieres
+      - main  # Genera preview si quieres (opcional)
 
 jobs:
   build-and-deploy:
@@ -32,8 +32,8 @@ jobs:
 
       # 5️⃣ Publicar en GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
+        uses: peaceiris/actions-gh-pages@v5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out  # Asegúrate que aquí esté la carpeta con tu build
-          publish_branch: gh-pages  # Rama donde se publicará
+          publish_dir: ./out        # Carpeta generada por Quartz
+          publish_branch: gh-pages  # Rama que GitHub Pages usará
