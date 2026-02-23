@@ -2,7 +2,7 @@
 title: Mi plan de estudios para llegar a Kant
 description:
 created: 2026-02-16T12:41:42
-modified: 2026-02-20T16:23:43
+modified: 2026-02-20T17:56:24
 ---
 
 # Plan de Estudio Universitario: Ruta a Kant (2 Años)

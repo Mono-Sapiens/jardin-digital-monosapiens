@@ -2,7 +2,7 @@
 title: Aristóteles y su tratado de lógica
 description: Introducción al tratado lógico aristotélico y su función en la historia de la lógica.
 created: 2026-02-20T15:58:23
-modified: 2026-02-20T16:25:56
+modified: 2026-02-20T17:56:24
 tags:
   - filosofia/logica
   - lecturas

@@ -1,6 +1,6 @@
 ---
 created: 2026-02-17T10:13:44
-modified: 2026-02-20T16:23:43
+modified: 2026-02-22T09:51:25
 ---
 Algunas lecturas son complejas, será necesario usar la IA a veces, pero con ciertas reglas:
 

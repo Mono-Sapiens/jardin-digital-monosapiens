@@ -2,7 +2,7 @@
 title: Empirismo en filosofía
 description:
 created: 2026-02-20T16:14:53
-modified: 2026-02-20T16:23:43
+modified: 2026-02-20T17:56:24
 tags:
   - en_construccion
 ---
