@@ -1,8 +1,8 @@
 ---
 title: El cerebro de David Eagleman
 description: Para entender el funcionamiento cerebral de forma divulgativa
-created: 2026-02-20T15:57:48
-modified: 2026-02-20T16:25:56
+created: 2026-02-20T15:27:56
+modified: 2026-02-27T17:33:45
 tags:
   - lecturas/finalizado
 ---

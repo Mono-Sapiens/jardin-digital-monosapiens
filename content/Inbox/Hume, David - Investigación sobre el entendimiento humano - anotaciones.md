@@ -1,8 +1,8 @@
 ---
 title: David Hume y su Investigación sobre el entendimiento humano
 description: Obra cúspide del empirismo para entender a Kant
-created: 2026-02-20T15:58:23
-modified: 2026-02-20T17:56:24
+created: 2026-02-20T14:08:14
+modified: 2026-02-27T17:33:45
 tags:
   - filosofia/empirismo
   - lecturas

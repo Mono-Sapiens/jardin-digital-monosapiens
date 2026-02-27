@@ -1,8 +1,8 @@
 ---
 title: Lecciones preliminares de filosofía de Morente
 description:
-created: 2026-02-20T15:58:23
-modified: 2026-02-20T17:56:24
+created: 2026-02-20T14:08:18
+modified: 2026-02-27T17:33:45
 tags:
   - filosofia/historia
   - filosofia/metafisica
