@@ -2,12 +2,11 @@
 title: Lecciones preliminares de filosofía de Morente
 description:
 created: 2026-02-20T14:08:18
-modified: 2026-02-27T17:33:45
+modified: 2026-04-01T19:25:07
 tags:
   - filosofia/historia
   - filosofia/metafisica
   - filosofia/epistemologia
-  - lecturas
 ---
 # Lección I
 ***
@@ -119,4 +118,4 @@ Termina hablando de *Parménides* y su importancia para la metafísica para cont
 # Lección V
 ***
 
->Leer más en el [[index]]
+>Leer más en el [[Contenido/index]]

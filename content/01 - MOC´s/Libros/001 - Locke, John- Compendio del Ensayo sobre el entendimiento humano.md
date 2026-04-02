@@ -2,11 +2,11 @@
 title: John Locke para llegar a Kant
 description: Mis lecturas de John Locke y su Compendio del Ensayo sobre el entendimiento humano
 created: 2026-02-17T10:13:44
-modified: 2026-02-20T17:56:24
+modified: 2026-03-13T22:17:04
 ---
 # Sobre esta lectura
 ***
-Importante para la comprensión del tema del [[Empirismo]]
+Importante para la comprensión del tema del [[Concepto - Empirismo]]
 
 
 # MOC

@@ -2,10 +2,9 @@
 title: Aristóteles y su tratado de lógica
 description: Introducción al tratado lógico aristotélico y su función en la historia de la lógica.
 created: 2026-02-20T14:08:14
-modified: 2026-02-27T17:33:45
+modified: 2026-03-13T22:17:04
 tags:
   - filosofia/logica
-  - lecturas
 tipo: lectura
 autor: Aristoteles
 ---
@@ -13,6 +12,7 @@ autor: Aristoteles
 *Ahora sí, Aristóteles*
 
 ## La entidad
+*o [[Concepto - Substancia|substancia]]*
 ***
 
 **Entidad primaria**
