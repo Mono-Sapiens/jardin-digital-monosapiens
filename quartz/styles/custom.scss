@@ -1,3 +1,40 @@
-@use "./variables.scss" as *;
+@use "./base.scss";
 
-// put your custom CSS here!
+@font-face {
+  font-family: 'Getai Sans';
+  /* 1. Agregamos la extensión .otf a la ruta */
+  /* 2. Cambiamos el format a 'opentype' */
+  src: url('/static/fonts/DTGetaiGroteskDisplay-Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Forzar que todos los encabezados usen Getai Sans */
+.article-title, .page-title {
+  font-family: 'Getai Sans', sans-serif !important;
+}
+
+/* --- Personalización de la barra de desplazamiento --- */
+
+/* 1. Define el ancho y alto de la barra */
+::-webkit-scrollbar {
+  width: 8px;  /* Más delgada que la versión por defecto */
+  height: 8px; /* Para barras horizontales si tienes bloques de código largos */
+}
+
+/* 2. Fondo de la pista por donde se desliza la barra */
+::-webkit-scrollbar-track {
+  background: transparent; /* Transparente para un look más limpio */
+}
+
+/* 3. Estilo del indicador (la parte que se arrastra) */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 120, 120, 0.3); /* Un gris sutil y semitransparente */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* 4. Estilo del indicador al pasar el cursor (hover) */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(120, 120, 120, 0.6); /* Se oscurece ligeramente para dar feedback interactivo */
+}
