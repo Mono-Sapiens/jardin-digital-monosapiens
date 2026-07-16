@@ -7,12 +7,13 @@ configuration:
   analytics:
     provider: plausible
   locale: es-ES
-  baseUrl: quartz.jzhao.xyz
+  baseUrl: mono-sapiens.github.io/jardin-digital-monosapiens
   ignorePatterns:
     - private
     - templates
     - .obsidian
-  defaultDateType: "modified"
+  defaultDateType: "created"
+  defaultDateType: modified
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
@@ -31,6 +32,8 @@ configuration:
         tertiary: "#ea999c"
         highlight: "rgba(139, 58, 58, 0.08)"
         textHighlight: "rgba(255, 226, 112, 0.5)"
+        highlight: rgba(139, 58, 58, 0.08)
+        textHighlight: rgba(255, 226, 112, 0.5)
       darkMode:
         light: "#232634"
         lightgray: "#626880 "
@@ -41,6 +44,8 @@ configuration:
         tertiary: "#ee99a0"
         highlight: "rgba(194, 115, 115, 0.15)"
         textHighlight: "rgba(255, 226, 112, 0.4)"
+        highlight: rgba(194, 115, 115, 0.15)
+        textHighlight: rgba(255, 226, 112, 0.4)
 plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
